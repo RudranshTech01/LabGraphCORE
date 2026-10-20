@@ -5,7 +5,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 st.set_page_config(
-    page_title="Physics Lab Graph Generator",
+    page_title="LabGraphCORE",
     page_icon="🔬",
     layout="wide"
 )
@@ -14,7 +14,7 @@ st.markdown(
     '<meta name="google-site-verification" content="e4ceOcApPdH1Bqi8CXRf_FzyNcEJIaYRglnhaP0SJN8" />',
     unsafe_allow_html=True
 )
-st.title("🔬 Physics Lab Graph Generator")
+st.title("🔬 LabGraphCORE")
 st.caption("Enter your experimental readings and generate a clean lab graph with automatic best-fit analysis.")
 
 PRESETS = {
@@ -367,10 +367,10 @@ if valid:
 
     d1, d2 = st.columns(2)
     with d1:
-        st.download_button("⬇️ Download PNG", data=png_buffer, file_name="physics_lab_graph.png",
+        st.download_button("⬇️ Download PNG", data=png_buffer, file_name="labgraphcore_graph.png",
                             mime="image/png", use_container_width=True)
     with d2:
-        st.download_button("⬇️ Download PDF", data=pdf_buffer, file_name="physics_lab_graph.pdf",
+        st.download_button("⬇️ Download PDF", data=pdf_buffer, file_name="labgraphcore_graph.pdf",
                             mime="application/pdf", use_container_width=True)
 
     plt.close(fig)
@@ -378,4 +378,4 @@ else:
     st.info("Enter valid readings above to generate the graph.")
 
 st.divider()
-st.caption("Physics Lab Graph Generator • Built with Python, Streamlit, NumPy and Matplotlib")
+st.caption("LabGraphCORE • Built with Python, Streamlit, NumPy and Matplotlib")
